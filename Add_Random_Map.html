@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html style="height: 100%;>
+<head>
+<title>View Random Map</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
+<!--[if lte IE 8]><link rel="stylesheet" href="../dist/leaflet.ie.css" /><![endif]-->
+<link href="style/leaflet.css" rel="stylesheet" type="text/css">
+</head>
+<script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.1"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+
+
+ 
+<body style="height: 100%;" onload="random_map();">
+	<div class="Title_TextBoxes">
+	
+		<p style="font-size:medium;"><b>Add Random Map to the View</b></p>
+		<p style="font-size:small;">Click on the "New Map" Button to View a New Random Map</p>
+	</div>
+
+	<div class="Random_Box" style="left:15px; top:25%;">
+		<p onclick=random_map() style="font-size:medium;"><a href="#"style="text-decoration:none;color:black;" /><b>Random Map</b></a></p>
+	</div>
+ 
+ 
+	<div class="Credits" style="left:15px; bottom:25px;">
+		<p style="font-size:x-small;">Built using <a href="http://leafletjs.com/"/>Leaflet</a> - for demo purposes only</p>
+		<p style="font-size:x-small;">For more geo ideas check out <a href="http://www.gisdoctor.com/site/"/>GISDoctor.com</a></p>
+		<p style="font-size:x-small;">Follow <a href="http://twitter.com/GISdoctor"/>@GISDoctor on Twitter</a></p> 
+		
+	</div>
+
+<div id="map" style="width: 100%; height: 99%"> </div>
+ 
+ 
+<script>
+    
+    var y = "";
+	
+    var mapLayer = "";
+    function random_map()
+     {
+		map_show = 0;
+        map.removeLayer(mapLayer);
+		
+		if (map_show + 1 == 1)
+		{
+		
+		var x = "";
+		y = x.innerHTML=Math.floor((Math.random()*9)+1);
+             
+        if (y == 1)
+        {
+            mapLayer = L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
+            }).addTo(map);
+		}
+		
+        if (y == 2)
+        {
+            mapLayer =L.tileLayer('http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.jpg', {
+            attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+            }).addTo(map);
+		          
+        }
+		
+        if (y == 3)
+        {
+            mapLayer =L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+            key: 'BC9A493B41014CAABB98F0471D759707',
+            styleId: 999
+            }).addTo(map);
+			
+        }
+		if (y == 4)
+        {
+            mapLayer =L.tileLayer('http://{s}.tile.cloudmade.com/{key}/{styleId}/256/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; 2011 OpenStreetMap contributors, Imagery &copy; 2011 CloudMade',
+            key: 'BC9A493B41014CAABB98F0471D759707',
+            styleId: 22677
+            }).addTo(map);
+			//map_show = 0;
+            //46561
+        }
+		
+        if (y == 5 )
+        {
+                                              
+            mapLayer =L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
+            attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+            }).addTo(map);
+			//map_show = 1;
+        }
+		
+        if (y == 6)
+        {
+            mapLayer =L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
+            }).addTo(map);
+			//map_show = 1;
+        }
+		
+                             
+        if (y == 7)
+        {
+            mapLayer = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Esri, DeLorme, NAVTEQ'
+            }).addTo(map);
+			//map_show = 1;
+        }
+		if (y == 8 )
+        {
+                                              
+            mapLayer =L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
+            attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+            }).addTo(map);
+            //map_show = 1;               
+            
+        }
+		if (y == 9 )
+        {
+                                              
+            mapLayer =L.tileLayer('http://{s}.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg', {
+            attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+            }).addTo(map);
+            //map_show = 1;        
+           
+        }
+				
+		}
+		else 
+		{
+			map.removeLayer(mapLayer);
+			map_show = 0;
+		}
+		
+		//map_show = 1;
+	}  
+   
+    
+ var map = L.map('map',{ zoomControl:false }).setView([42.36, -71.06], 15);
+</script>
+ <!--Do not copy and paste the next two blocks of code into your page-->
+<script type="text/javascript"> 
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+    var pageTracker = _gat._getTracker("UA-10269571-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+</script> 
+</body>
+</html>

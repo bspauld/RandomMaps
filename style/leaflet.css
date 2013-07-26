@@ -1,0 +1,104 @@
+/*Extent Testing CSS*/
+
+.home_title
+{
+	font-family:arial; 
+	position:absolute; 
+	left:15px; 
+	top:15px;
+	background:rgba(255, 255, 255, 0.65); 
+	border-radius: 15px; 
+	padding:5px; 
+	width:750px; 
+	z-index:10;
+	box-shadow:5px 5px 5px #888888;
+
+}
+
+
+
+.title_div
+{	font-family:arial; 
+	position:absolute; 
+	right:45%;
+	top:2%;
+	background:white; border-radius:15px; 
+	padding:5px; 
+	z-index:10; 
+	width:300px;
+	box-shadow:5px 5px 5px #888888;
+}
+
+.Coord_Boxes
+{
+	font-family:arial; 
+	position:absolute; 
+	background:white; border-radius: 10px; 
+	padding-left:10px; 
+	z-index:10; 
+	width:135px;
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.Title_TextBoxes
+{
+	font-family:arial; 
+	position:absolute; 
+	left:15px; top:15px;
+	background:rgba(255, 255, 255, 0.95); 
+	border-radius: 15px; 
+	padding:5px; 
+	width:350px; 
+	z-index:10;
+	box-shadow:5px 5px 5px #888888;
+}
+
+.Random_Box
+{
+	font-family:arial; 
+	position:absolute; 
+	background:rgba(255, 255, 255, 0.95); 
+	border-radius: 10px; 
+	padding-left:10px; 
+	z-index:10; 
+	width:115px;
+	box-shadow:5px 5px 5px #888888;
+}
+
+.Random_Box:hover
+{
+	background-color:#FFFF66;
+	
+}
+
+.ShowHide_Box
+{
+	font-family:arial; 
+	position:absolute; 
+	background:rgba(255, 255, 255, 0.95); 
+	border-radius: 10px; 
+	padding-left:10px; 
+	z-index:10; 
+	width:125px;
+	box-shadow:5px 5px 5px #888888;
+}
+
+
+.ShowHide_Box:hover
+{
+	background-color:#FFFF66;
+}
+
+
+.Credits
+{
+	font-family:arial; 
+	position:absolute; 
+	left:15px; 
+	bottom:2%;
+	background:rgba(255, 255, 255, 0.75); 
+	border-radius: 10px; 
+	padding:5px; 
+	z-index:10;
+	box-shadow:5px 5px 5px #888888;
+}

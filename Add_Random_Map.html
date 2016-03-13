@@ -9,8 +9,11 @@
 <link href="style/leaflet.css" rel="stylesheet" type="text/css">
 </head>
 <script type="text/javascript" src="http://maps.stamen.com/js/tile.stamen.js?v1.2.1"></script>
-<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+
 <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+
+<script src='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.3.0/mapbox.css' rel='stylesheet' />
 
  
 <body style="height: 100%;" onload="random_map();">
@@ -28,6 +31,7 @@
 		<p style="font-size:x-small;">Built using <a href="http://leafletjs.com/"/>Leaflet</a> - for demo purposes only</p>
 		<p style="font-size:x-small;">For more geo ideas check out <a href="http://www.gisdoctor.com/site/"/>GISDoctor.com</a></p>
 		<p style="font-size:x-small;">Follow <a href="http://twitter.com/GISdoctor"/>@GISDoctor on Twitter</a></p> 
+		<p style="font-size:x-small;">Last update - 3/2016</p> 
 
 	</div>
 
@@ -48,11 +52,15 @@
 	{
 		//call a random value between a min and max value
 		var x = "";
-		y = x.innerHTML=Math.floor((Math.random()*7)+1);
+		y = x.innerHTML=Math.floor((Math.random()*11)+1);
              	
-             	//set the maps that can be called at random.  Give each map a value that falls within the set range
-	       
-	       		
+             	
+	        //MapBox access token.  Sign up for MapBox here - https://www.mapbox.com/
+			L.mapbox.accessToken = 'pk.eyJ1IjoiYnNwYXVsZCIsImEiOiJjaWxyMnB4eWgwOG5kdnZseXU0b2Q1MmttIn0.OstuEUq49ANVkHgJzP6Srw';
+			
+			//set the maps that can be called at random.  Give each map a value that falls within the set range
+			
+			//Stamen tiles
 	        if (y == 1 )
 	        {
 	            	mapLayer =L.tileLayer('http://{s}.tile.stamen.com/watercolor/{z}/{x}/{y}.jpg', {
@@ -60,36 +68,37 @@
 	            	}).addTo(map);
 	        }
 
-	        if (y == 2)
-	        {
-	            	mapLayer =L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-					attribution: 'National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
-	            	}).addTo(map);
-	        }
-
-	        if (y == 3)
-	        {
-	            	mapLayer = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-	            	attribution: 'Esri, DeLorme, NAVTEQ'
-	            	}).addTo(map);
-
-	        }
-
-			if (y == 4 )
+			if (y == 2 )
 	        {
 	             	mapLayer =L.tileLayer('http://{s}.tile.stamen.com/terrain/{z}/{x}/{y}.jpg', {
 	            	attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	            	}).addTo(map);
 
 	        }
-
-			if (y == 5)
+			if (y == 3)
 	        {
 
 	           	mapLayer =L.tileLayer('http://{s}.tile.stamen.com/terrain-background/{z}/{x}/{y}.jpg', {
 	            	attribution:'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 	            	}).addTo(map);
 	        }
+			
+			//Esri tiles
+	        if (y == 4)
+	        {
+	            	mapLayer =L.tileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+					attribution: 'National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC'
+	            	}).addTo(map);
+	        }
+
+	        if (y == 5)
+	        {
+	            	mapLayer = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+	            	attribution: 'Esri, DeLorme, NAVTEQ'
+	            	}).addTo(map);
+
+	        }
+			
 			if (y == 6 )
 	        {
 
@@ -105,6 +114,41 @@
 	            	}).addTo(map);
 	        }
 			
+			//Mapbox tiles
+			if (y ==8)
+			{
+				
+				mapLayer =L.tileLayer('https://api.mapbox.com/v4/mapbox.outdoors/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+	            	attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	            	}).addTo(map);
+				
+			}
+			if (y ==9)
+			{
+				
+				mapLayer =L.tileLayer('https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+	            	attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	            	}).addTo(map);
+				
+			}
+			if (y ==10)
+			{
+				
+				mapLayer =L.tileLayer('https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}.png?access_token=' + L.mapbox.accessToken, {
+	            	attribution: '© <a href="https://www.mapbox.com/map-feedback/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	            	}).addTo(map);
+				
+			}
+			
+			//OpenStreetMap tiles
+			if (y ==11)
+			{
+				
+				mapLayer =L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+	            	attribution: '<a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	            	}).addTo(map);
+				
+			}
 
 	}
 	else 
